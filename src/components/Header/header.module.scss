@@ -1,0 +1,172 @@
+@import "scss/_mixins.scss";
+.site-header {
+  @include centerbetween;
+  padding-top: 13px;
+  padding-bottom: 14px;
+
+  &__left {
+    @include centerStart;
+    gap: 40px;
+  }
+
+  &__menu-btn {
+    display: none;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #e7f3fc;
+  }
+
+  &__menu-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__nav {
+    &_list {
+      @include list-unstiled;
+      @include centerStart;
+      gap: 32px;
+    }
+  }
+
+  &__right {
+    @include centerStart;
+  }
+
+  &__location {
+    @include centerStart;
+    gap: 8px;
+
+    &-icon {
+      @include centerCenter;
+      padding: 7px;
+      border-radius: 50%;
+      background-color: #e7f3fc;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-link {
+      font-size: 13px;
+      line-height: 16px;
+      color: #5982e7;
+    }
+  }
+
+  &__basket-btn {
+    @include centerCenter;
+    margin-left: 32px;
+    padding: 9px;
+    border-radius: 50%;
+    background-color: #e7f3fc;
+  }
+
+  &__language-btn {
+    @include centerStart;
+    gap: 12px;
+    margin-left: 12px;
+    padding: 8px 8px 8px 12px;
+    border-radius: 155px;
+    background: #e7f3fc;
+  }
+
+  &__login {
+    margin-left: 16px;
+    padding: 6px 12px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #5982e7;
+    border-radius: 155px;
+    background: rgba(231, 243, 252, 0.7);
+  }
+}
+
+@include desktop-first(1024px) {
+  .site-header {
+    &__left {
+      gap: 36px;
+    }
+
+    &__nav {
+      &_list {
+        gap: 28px;
+      }
+    }
+
+    &__location {
+      display: none;
+    }
+  }
+}
+
+@include desktop-first(768px) {
+  .site-header {
+    &__left {
+      gap: 36px;
+    }
+
+    &__menu-btn {
+      display: block;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__language-btn {
+      display: none;
+    }
+  }
+}
+
+@include desktop-first(576px) {
+  .site-header {
+    &__left {
+      gap: 20px;
+    }
+
+    &__basket-btn {
+      display: none;
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 48px;
+  z-index: 2;
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__nav {
+      display: block;
+    }
+
+    &__location {
+      display: flex;
+    }
+
+    &__nav_list {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &-close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}

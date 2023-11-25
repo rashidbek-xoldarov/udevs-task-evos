@@ -1,0 +1,42 @@
+@import "scss/_mixins.scss";
+
+.menubar {
+  margin-top: 32px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    list-style: none;
+    overflow: auto;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+
+    &_active {
+      font-weight: 500;
+      background-color: #e7f3fc;
+      color: #5982e7;
+    }
+  }
+}
+
+@include desktop-first(768px) {
+  .menubar {
+    &__list {
+      gap: 6px;
+    }
+
+    &__item {
+      padding: 10px 14px;
+      font-size: 12px;
+      border-radius: 12px;
+    }
+  }
+}
